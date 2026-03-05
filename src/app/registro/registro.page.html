@@ -64,6 +64,14 @@
         <ion-label position="floating" class="label">Confirmar contraseña</ion-label>
         <ion-input type="password" [(ngModel)]="confirmPassword"></ion-input>
       </ion-item>
+
+       <ion-item>
+        <ion-label position="floating" class="label">Tipo de usuario</ion-label>
+        <ion-select [(ngModel)]="tipoUsuario">
+          <ion-select-option value="maestro">Maestro</ion-select-option>
+          <ion-select-option value="alumno">Alumno</ion-select-option>
+        </ion-select>
+      </ion-item>
       <ion-button routerLink="/home" expand="block" class="boton" expand="block" 
 (click)="registrarse()"
 [disabled]="!nombre || !apellido || !correo || !telefono || !password || !confirmPassword || password !== confirmPassword">>

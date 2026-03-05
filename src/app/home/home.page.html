@@ -27,6 +27,18 @@
 
   <!-- CONTENIDO PRINCIPAL -->
   <ion-content>
+      <!-- Panel maestro -->
+  <div *ngIf="tipoUsuario === 'maestro'">
+    <h2>Panel del Maestro</h2>
+    <p>Opciones para gestionar alumnos y tareas</p>
+  </div>
+
+  <!-- Panel alumno -->
+  <div *ngIf="tipoUsuario === 'alumno'">
+    <h2>Panel del Alumno</h2>
+    <p>Opciones para ver tareas y calificaciones</p>
+  </div>
+
 
     <!-- PUNTOS Y PERFIL -->
     <ion-item lines="none">

@@ -5,7 +5,7 @@ import {
   IonHeader, IonToolbar, IonTitle, IonContent,
   IonCard, IonCardHeader, IonCardTitle, IonCardContent,
   IonList, IonItem, IonLabel, IonInput, IonButton,
-  IonAvatar
+  IonAvatar, IonSelect, IonSelectOption
 } from '@ionic/angular/standalone';
 
 import { RouterLink } from '@angular/router';
@@ -21,7 +21,7 @@ import { UserServivce } from '../services/user';
     CommonModule, FormsModule,
     IonCard, IonCardHeader, IonCardTitle, IonCardContent,
     IonList, IonItem, IonLabel, IonInput, IonButton, IonAvatar,
-    RouterLink
+    RouterLink, IonSelect, IonSelectOption
   ]
 })
 export class RegistroPage implements OnInit {
@@ -55,14 +55,17 @@ export class RegistroPage implements OnInit {
   telefono: string = "";
   password: string = "";
   confirmPassword: string = "";
+  tipoUsuario: string = "";
 
   registrarse() {
 
-    if (!this.nombre || !this.apellido || !this.correo || !this.telefono || !this.password || !this.confirmPassword) {
+    if (!this.nombre || !this.apellido || !this.correo || !this.telefono || !this.password || !this.confirmPassword || this.password !== this.confirmPassword || !this.tipoUsuario) {
       alert("Por favor llena todos los campos");
       return;
     }
 
     alert("Registro completado correctamente");
+    alert("Registro completado como " + this.tipoUsuario);
+    this.userService.setTipoUsuario(this.tipoUsuario);
   }
 }

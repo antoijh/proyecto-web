@@ -52,7 +52,7 @@ import {
 export class HomePage {
 
   selectedDate: string = '';
-
+  tipoUsuario: string = "";
   avatar = "";
 
  constructor(private userService: UserServivce){}
@@ -64,5 +64,6 @@ export class HomePage {
 
 ngOnInit(){
   this.avatar = this.userService.getAvatar();
+    this.tipoUsuario = this.userService.getTipoUsuario();
 }
 }

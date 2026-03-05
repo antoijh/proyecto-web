@@ -16,4 +16,13 @@ export class UserServivce {
   getAvatar(){
     return this.avatar;
   }
+  tipoUsuario: string = "";
+
+setTipoUsuario(tipo: string){
+  this.tipoUsuario = tipo;
+}
+
+getTipoUsuario(){
+  return this.tipoUsuario;
+}
 }

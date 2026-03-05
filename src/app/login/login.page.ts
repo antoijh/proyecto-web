@@ -1,20 +1,36 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonInput, IonButton } from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonButton, IonInput, IonLabel, IonItem, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonicModule, FormsModule]
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
 
-  constructor() { }
+  correo: string = '';
+  password: string = '';
+  error: string = '';
 
-  ngOnInit() {
+  constructor(private router: Router) {}
+
+  login() {
+
+    // Credenciales falsas
+    const correoCorrecto = "admin@gmail.com";
+    const passwordCorrecta = "1234";
+
+    if (this.correo === correoCorrecto && this.password === passwordCorrecta) {
+
+      this.error = '';
+      this.router.navigate(['/home']);
+
+    } else {
+      this.error = "Credenciales incorrectas";
+    }
   }
-
 }

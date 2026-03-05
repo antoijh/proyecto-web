@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { UserServivce } from '../services/user';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.services';
 
 import { RouterLink } from '@angular/router';
 import { 
@@ -13,14 +13,12 @@ import {
   IonCardContent,
   IonDatetime,
   IonItem,
-  IonInput,
-  IonImg,
   IonMenu,          
   IonMenuButton,    
   IonButtons,
-  IonNavLink,
   IonAvatar,
-   IonLabel
+  IonLabel,
+  IonList
 } from '@ionic/angular/standalone';
 
 
@@ -40,30 +38,31 @@ import {
     IonCardContent,
     IonDatetime,
     IonItem,
-    IonInput,
-    IonImg,
     IonMenu,          
     IonMenuButton,   
     IonButtons,  
     RouterLink ,
-    IonAvatar, IonLabel    
+    IonAvatar, 
+    IonList  
   ],
 })
-export class HomePage {
+ export class HomePage implements OnInit {
 
   selectedDate: string = '';
   tipoUsuario: string = "";
   avatar = "";
+  nombre = "";
 
- constructor(private userService: UserServivce){}
+ constructor(private userService : UserService){}
 
 
   onDateChange(event: any) {
     this.selectedDate = event.detail.value;
   }
 
-ngOnInit(){
+ ngOnInit(){
   this.avatar = this.userService.getAvatar();
-    this.tipoUsuario = this.userService.getTipoUsuario();
-}
+  this.tipoUsuario = this.userService.getTipoUsuario();
+  this.nombre = this.userService.getNombre();
+ }
 }

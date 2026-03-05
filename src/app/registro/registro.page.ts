@@ -9,7 +9,7 @@ import {
 } from '@ionic/angular/standalone';
 
 import { RouterLink } from '@angular/router';
-import { UserServivce } from '../services/user';
+import { UserService } from '../services/user.services';
 
 @Component({
   selector: 'app-registro',
@@ -26,8 +26,7 @@ import { UserServivce } from '../services/user';
 })
 export class RegistroPage implements OnInit {
 
-  constructor(private userService: UserServivce) {}
-
+ constructor(private userService: UserService) {}
   imagenPreview: string | ArrayBuffer | null = null;
 
   seleccionarImagen(event: any) {
@@ -56,7 +55,6 @@ export class RegistroPage implements OnInit {
   password: string = "";
   confirmPassword: string = "";
   tipoUsuario: string = "";
-
   registrarse() {
 
     if (!this.nombre || !this.apellido || !this.correo || !this.telefono || !this.password || !this.confirmPassword || this.password !== this.confirmPassword || !this.tipoUsuario) {
@@ -67,5 +65,6 @@ export class RegistroPage implements OnInit {
     alert("Registro completado correctamente");
     alert("Registro completado como " + this.tipoUsuario);
     this.userService.setTipoUsuario(this.tipoUsuario);
+    this.userService.setNombre(this.nombre);
   }
 }

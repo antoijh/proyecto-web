@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class UserServivce {
+export class UserService {
   
   avatar: string = "";
+  nombre: string = "";
 
   constructor() { }
 
@@ -18,11 +19,18 @@ export class UserServivce {
   }
   tipoUsuario: string = "";
 
-setTipoUsuario(tipo: string){
+ setTipoUsuario(tipo: string){
   this.tipoUsuario = tipo;
-}
+ }
 
-getTipoUsuario(){
+ getTipoUsuario(){
   return this.tipoUsuario;
-}
+ }
+ setNombre(name: string){
+    this.nombre = name;
+  }
+
+  getNombre(){
+    return this.nombre;
+  }
 }

@@ -1,0 +1,99 @@
+ion-content {
+  --background: #121212;
+}
+
+ion-avatar img{
+  border-radius: 50%;
+}
+
+ion-item{
+  margin-bottom: 5px;
+}
+
+ion-button{
+  margin-top: 20px;
+  border-radius: 12px;
+}
+
+.main-container {
+  display: flex;
+  padding: 20px;
+  gap: 30px;
+}
+
+
+.calendar-section {
+  flex: 1;
+}
+
+.calendar-section ion-card {
+  width: 100%;
+  height: 100%;
+}
+
+
+.tasks-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+ion-card {
+  border-radius: 20px;
+  background: #1E1E1E;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+
+.task-card {
+  padding: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.task-card:hover {
+  transform: scale(1.02);
+}
+
+
+ion-card-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+
+ion-datetime {
+  width: 100%;
+  height: 500px;
+  max-width: 100%;
+  --background: #1E1E1E;
+  --title-color: #ffffff;
+}
+
+
+p {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 500;
+  color: #3B82F6;
+}
+
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+}
+
+ion-fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+ion-fab-button {
+  --background: #ffffff;
+ --color: black;
+}

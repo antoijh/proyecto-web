@@ -15,19 +15,23 @@ import {IonLabel,
     IonMenuButton,   
     IonButtons,  
     IonAvatar, 
-    IonList,IonRouterLink } from '@ionic/angular/standalone';
+    IonList,IonFab,IonFabButton,IonFabList,IonIcon } from '@ionic/angular/standalone';
 import { UserService } from '../services/user.services';
 import { RouterLink } from '@angular/router';
+import { add } from 'ionicons/icons';
+import { book } from 'ionicons/icons';
 @Component({
   selector: 'app-maestro-home',
   templateUrl: './maestro-home.page.html',
   styleUrls: ['./maestro-home.page.scss'],
   standalone: true,
-  imports: [IonContent, RouterLink, IonCard, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonList, IonItem, IonMenu, IonLabel, IonAvatar, IonButtons, IonMenuButton, IonCardHeader, IonCardTitle, IonCardContent]
+  imports: [IonContent, IonIcon, RouterLink, IonCard, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonList, IonItem, IonMenu, IonLabel, IonAvatar, IonButtons, IonMenuButton, IonCardHeader, IonCardTitle, IonCardContent, IonFab, IonFabButton, IonFabList, IonIcon]
 })
 export class MaestroHomePage implements OnInit {
   avatar = "";
   nombre = "";
+  iconadd = add;
+  iconbook = book;
   constructor(private userService: UserService) { }
 
   ngOnInit() {

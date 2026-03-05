@@ -9,7 +9,7 @@ import {
 } from '@ionic/angular/standalone';
 
 import { RouterLink } from '@angular/router';
-import { UserServivce } from '../services/user';
+import { UserService } from '../services/user';
 
 @Component({
   selector: 'app-registro',
@@ -26,7 +26,7 @@ import { UserServivce } from '../services/user';
 })
 export class RegistroPage implements OnInit {
 
-  constructor(private userService: UserServivce) {}
+  constructor(private   UserServivce:UserService) {}
 
   imagenPreview: string | ArrayBuffer | null = null;
 
@@ -40,7 +40,7 @@ export class RegistroPage implements OnInit {
 
       lector.onload = () => {
         this.imagenPreview = lector.result;
-        this.userService.setAvatar(lector.result as string);
+        this.UserServivce.setAvatar(lector.result as string);
       };
 
       lector.readAsDataURL(archivo);

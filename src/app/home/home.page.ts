@@ -20,9 +20,8 @@ import {
   IonButtons,
   IonNavLink,
   IonAvatar,
-  IonList,
-  IonLabel,
-
+   IonLabel,
+   IonList
 } from '@ionic/angular/standalone';
 
 
@@ -48,20 +47,18 @@ import {
     IonMenuButton,   
     IonButtons,  
     RouterLink ,
-    IonAvatar,
-    IonList,
-
-    IonLabel    
+    IonAvatar, IonLabel ,
+    IonList  
   ],
 })
 export class HomePage {
 
   selectedDate: string = '';
-
+  tipoUsuario: string = "";
   avatar = "";
   nombre = "";
 
- constructor(private userService: UserService){}
+ constructor(private UserService : UserService){}
 
 
   onDateChange(event: any) {
@@ -69,8 +66,7 @@ export class HomePage {
   }
 
 ngOnInit(){
-  this.avatar = this.userService.getAvatar();
-  this.nombre = this.userService.getNombre();
+  this.avatar = this.UserService.getAvatar();
+  this.nombre = this.UserService.getNombre();
 }
-  
 }

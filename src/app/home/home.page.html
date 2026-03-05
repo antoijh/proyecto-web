@@ -1,21 +1,21 @@
 <ion-menu contentId="main-content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu Content</ion-title>
+      <ion-title>Menú</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content class="ion-padding">
-    This is the menu content.
- <ion-button expand="block" routerLink="/login">
-  Cerrar sesión
-</ion-button>
+    <ion-button expand="block" routerLink="/login">
+      Cerrar sesión
+    </ion-button>
   </ion-content>
 </ion-menu>
 
 
 <div class="ion-page" id="main-content">
 
+  <!-- HEADER SUPERIOR -->
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -25,34 +25,75 @@
     </ion-toolbar>
   </ion-header>
 
+  <!-- CONTENIDO PRINCIPAL -->
   <ion-content>
 
-    <ion-item>
-      <ion-input label="Puntos:"></ion-input>
-      <ion-img src="assets/profile-2398782_640.webp" style="width:50px; height:50px;"></ion-img>
+    <!-- PUNTOS Y PERFIL -->
+    <ion-item lines="none">
+      <ion-label>Puntos:</ion-label>
+      <ion-img 
+        src="assets/profile-2398782_640.webp"
+        style="width:50px; height:50px; margin-left:auto;">
+      </ion-img>
     </ion-item>
-    
 
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Selecciona una fecha</ion-card-title>
-      </ion-card-header>
+    <!-- CONTENEDOR FLEX -->
+    <div class="main-container">
 
-      <ion-card-content>
-        <ion-datetime
-          presentation="date"
-          locale="es-MX"
-          (ionChange)="onDateChange($event)">
-        </ion-datetime>
-        @if (selectedDate) {
-          <p>Fecha elegida: {{ selectedDate }}</p>
-        }
+      <!-- IZQUIERDA: CALENDARIO -->
+      <div class="calendar-section">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Selecciona una fecha</ion-card-title>
+          </ion-card-header>
 
-        
+          <ion-card-content>
+            <ion-datetime
+              presentation="date"
+              locale="es-MX"
+              (ionChange)="onDateChange($event)">
+            </ion-datetime>
 
-      </ion-card-content>
-    </ion-card>
-     
+            @if (selectedDate) {
+              <p>Fecha elegida: {{ selectedDate }}</p>
+            }
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <!-- DERECHA: TAREAS -->
+      <div class="tasks-section">
+
+        <ion-card class="task-card">
+          <ion-card-header>
+            <ion-card-title>Tarea 1</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Qué es el internet de las cosas
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="task-card">
+          <ion-card-header>
+            <ion-card-title>Tarea 2</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Investigación historia de México
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="task-card">
+          <ion-card-header>
+            <ion-card-title>Tarea 3</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Ensayo inglés
+          </ion-card-content>
+        </ion-card>
+
+      </div>
+
+    </div>
 
   </ion-content>
 

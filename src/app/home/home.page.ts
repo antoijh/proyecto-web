@@ -16,15 +16,14 @@ import {
   IonMenu,          
   IonMenuButton,    
   IonButtons,
-  IonNavLink
-} from '@ionic/angular/standalone';
+  IonNavLink, IonLabel } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [
+  imports: [IonLabel, 
     IonHeader, 
     IonToolbar, 
     IonTitle, 

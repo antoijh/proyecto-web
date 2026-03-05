@@ -28,7 +28,8 @@
     accept="image/*"
     (change)="seleccionarImagen($event)"
     style="display:none"
-    #fileInput />
+    #fileInput
+    (change)="seleccionarImagen($event)" />
 
   <ion-button size="small" (click)="fileInput.click()" class="boton">
     Agregar imagen
@@ -37,33 +38,36 @@
 </div>
       <ion-item>
         <ion-label position="floating" class="label">Nombre(s)</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="nombre"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating" class="label">Apellido(s)</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="apellido"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating" class="label">Correo electrónico</ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-input type="email" [(ngModel)]="correo"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating" class="label">Número de teléfono</ion-label>
-        <ion-input type="tel"></ion-input>
+        <ion-input type="tel" [(ngModel)]="telefono"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating" class="label">Contraseña</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating" class="label">Confirmar contraseña</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" [(ngModel)]="confirmPassword"></ion-input>
       </ion-item>
-      <ion-button routerLink="/home" expand="block" class="boton">
+      <ion-button routerLink="/home" expand="block" class="boton" expand="block" 
+(click)="registrarse()"
+[disabled]="!nombre || !apellido || !correo || !telefono || !password || !confirmPassword || password !== confirmPassword">>
+        
         Registrarse
       </ion-button>
 

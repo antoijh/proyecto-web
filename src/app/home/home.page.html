@@ -6,16 +6,53 @@
   </ion-header>
 
   <ion-content class="ion-padding">
+
+   
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img [src]="avatar">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ nombre }}</h2>
+        <p>Puntos: 120</p>
+      </ion-label>
+    </ion-item>
+
+   
+    <ion-list>
+
+      <ion-item routerLink="/home">
+        <ion-label> Inicio</ion-label>
+      </ion-item>
+
+      <ion-item routerLink="/materias">
+        <ion-label> Materias</ion-label>
+      </ion-item>
+
+      <ion-item routerLink="/actividades">
+        <ion-label> Actividades</ion-label>
+      </ion-item>
+
+    </ion-list>
+
+   
+    <ion-list>
+      <ion-item routerLink="/configuracion">
+        <ion-label> Configuración</ion-label>
+      </ion-item>
+    </ion-list>
+
+   
     <ion-button expand="block" routerLink="/login">
       Cerrar sesión
     </ion-button>
+
   </ion-content>
 </ion-menu>
 
-
 <div class="ion-page" id="main-content">
 
-  <!-- HEADER SUPERIOR -->
+  
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -25,21 +62,21 @@
     </ion-toolbar>
   </ion-header>
 
-  <!-- CONTENIDO PRINCIPAL -->
+
   <ion-content>
 
-    <!-- PUNTOS Y PERFIL -->
+  
     <ion-item lines="none">
-      <ion-label>Puntos:</ion-label>
+      <ion-label>Bienvenido</ion-label>
         <ion-avatar>
   <img [src]="avatar">
 </ion-avatar>
     </ion-item>
 
-    <!-- CONTENEDOR FLEX -->
+    
     <div class="main-container">
 
-      <!-- IZQUIERDA: CALENDARIO -->
+
       <div class="calendar-section">
         <ion-card>
           <ion-card-header>
@@ -60,7 +97,7 @@
         </ion-card>
       </div>
 
-      <!-- DERECHA: TAREAS -->
+
       <div class="tasks-section">
 
         <ion-card class="task-card">
@@ -97,5 +134,3 @@
   </ion-content>
 
 </div>
-
-<!-- ESTILOS -->

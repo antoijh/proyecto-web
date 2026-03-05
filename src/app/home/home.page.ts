@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserServivce } from '../services/user';
+import { UserService } from '../services/user';
 
 import { RouterLink } from '@angular/router';
 import { 
@@ -20,7 +20,9 @@ import {
   IonButtons,
   IonNavLink,
   IonAvatar,
-   IonLabel
+  IonList,
+  IonLabel,
+
 } from '@ionic/angular/standalone';
 
 
@@ -46,7 +48,10 @@ import {
     IonMenuButton,   
     IonButtons,  
     RouterLink ,
-    IonAvatar, IonLabel    
+    IonAvatar,
+    IonList,
+
+    IonLabel    
   ],
 })
 export class HomePage {
@@ -54,8 +59,9 @@ export class HomePage {
   selectedDate: string = '';
 
   avatar = "";
+  nombre = "";
 
- constructor(private userService: UserServivce){}
+ constructor(private userService: UserService){}
 
 
   onDateChange(event: any) {
@@ -64,5 +70,7 @@ export class HomePage {
 
 ngOnInit(){
   this.avatar = this.userService.getAvatar();
+  this.nombre = this.userService.getNombre();
 }
+  
 }

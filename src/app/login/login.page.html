@@ -19,9 +19,14 @@
   <ion-button expand="block" class="ion-margin-top" (click)="login()">
     Iniciar Sesión
   </ion-button>
+  <ion-button routerLink="/registro" expand="block" class="mt-3">
+        Registrarse
+      </ion-button>
+  
 
   <ion-text color="danger" *ngIf="error">
     <p class="ion-text-center">{{ error }}</p>
   </ion-text>
+
 
 </ion-content>

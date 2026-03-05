@@ -5,6 +5,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+<ion-item>
+  <ion-label>Tipo de usuario</ion-label>
+  <ion-select [(ngModel)]="tipoUsuario">
+    <ion-select-option value="alumno">Alumno</ion-select-option>
+    <ion-select-option value="maestro">Maestro</ion-select-option>
+  </ion-select>
+</ion-item>
 <ion-card>
   <ion-card-header>
     <ion-card-title>Registro</ion-card-title>
@@ -70,15 +77,16 @@
         <ion-select [(ngModel)]="tipoUsuario">
           <ion-select-option value="maestro">Maestro</ion-select-option>
           <ion-select-option value="alumno">Alumno</ion-select-option>
-        </ion-select>
+           </ion-select>
       </ion-item>
-      <ion-button routerLink="/home" expand="block" class="boton" expand="block" 
-(click)="registrarse()"
-[disabled]="!nombre || !apellido || !correo || !telefono || !password || !confirmPassword || password !== confirmPassword">>
-        
-        Registrarse
-      </ion-button>
+<ion-button
+  expand="block"
+  class="boton"
+  (click)="registrarse()"
+  [disabled]="!nombre || !apellido || !correo || !telefono || !password || !confirmPassword || password !== confirmPassword || !tipoUsuario">
 
+  Registrarse
+</ion-button>
     </ion-list>
   </ion-card-content>
 </ion-card>

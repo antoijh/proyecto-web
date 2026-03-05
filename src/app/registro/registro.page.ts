@@ -10,6 +10,7 @@ import {
 
 import { RouterLink } from '@angular/router';
 import { UserService } from '../services/user.services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -20,13 +21,12 @@ import { UserService } from '../services/user.services';
     IonContent, IonHeader, IonTitle, IonToolbar,
     CommonModule, FormsModule,
     IonCard, IonCardHeader, IonCardTitle, IonCardContent,
-    IonList, IonItem, IonLabel, IonInput, IonButton, IonAvatar,
-    RouterLink, IonSelect, IonSelectOption
+    IonList, IonItem, IonLabel, IonInput, IonButton, IonAvatar, IonSelect, IonSelectOption
   ]
 })
 export class RegistroPage implements OnInit {
 
- constructor(private userService: UserService) {}
+ constructor(private userService: UserService, private router: Router) {}
   imagenPreview: string | ArrayBuffer | null = null;
 
   seleccionarImagen(event: any) {
@@ -57,14 +57,20 @@ export class RegistroPage implements OnInit {
   tipoUsuario: string = "";
   registrarse() {
 
+    console.log("tipoUsuario: ", this.tipoUsuario);
     if (!this.nombre || !this.apellido || !this.correo || !this.telefono || !this.password || !this.confirmPassword || this.password !== this.confirmPassword || !this.tipoUsuario) {
       alert("Por favor llena todos los campos");
       return;
-    }
 
+    }
     alert("Registro completado correctamente");
     alert("Registro completado como " + this.tipoUsuario);
     this.userService.setTipoUsuario(this.tipoUsuario);
     this.userService.setNombre(this.nombre);
+     if(this.tipoUsuario === "maestro"){
+  this.router.navigate(['/maestro-home']);
+}else{
+  this.router.navigate(['/home']);
+}
   }
 }

@@ -62,7 +62,6 @@ import {
 
  ngOnInit(){
   this.avatar = this.userService.getAvatar();
-  this.tipoUsuario = this.userService.getTipoUsuario();
   this.nombre = this.userService.getNombre();
  }
 }

@@ -21,15 +21,25 @@ export class LoginPage {
   login() {
 
     // Credenciales falsas
-    const correoCorrecto = "admin@gmail.com";
+    const correoCorrectomaestro = "admin@gmail.com";
     const passwordCorrecta = "1234";
+    const tipoUsuarioMaestro = "maestro";
+    const correoCorrectoalumno = "alumno@gmail.com";
+    const passwordCorrectoalumno = "4321";
+    const tipoUsuarioAlumno = "alumno";
+   
+    if (this.correo === correoCorrectomaestro && this.password === passwordCorrecta && tipoUsuarioMaestro === "maestro") {
 
-    if (this.correo === correoCorrecto && this.password === passwordCorrecta) {
+      this.error = '';
+      this.router.navigate(['/maestro-home']);
+
+    } 
+    else if (this.correo === correoCorrectoalumno && this.password === passwordCorrectoalumno && tipoUsuarioAlumno === "alumno") {
 
       this.error = '';
       this.router.navigate(['/home']);
-
-    } else {
+    }
+    else {
       this.error = "Credenciales incorrectas";
     }
   }

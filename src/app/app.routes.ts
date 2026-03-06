@@ -20,6 +20,10 @@ export const routes: Routes = [
   },  {
     path: 'maestro-home',
     loadComponent: () => import('./maestro-home/maestro-home.page').then( m => m.MaestroHomePage)
+  },
+  {
+    path: 'configuracion',
+    loadComponent: () => import('./configuracion/configuracion.page').then( m => m.ConfiguracionPage)
   }
 
 ];

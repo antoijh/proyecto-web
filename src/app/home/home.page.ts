@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.services';
 
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { 
   IonHeader, 
   IonToolbar, 
@@ -43,7 +43,7 @@ import {
     IonButtons,  
     RouterLink ,
     IonAvatar, 
-    IonList  
+    IonList , RouterModule
   ],
 })
  export class HomePage implements OnInit {

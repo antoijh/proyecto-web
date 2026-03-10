@@ -7,6 +7,8 @@ export class UserService {
   
   avatar: string = "";
   nombre: string = "";
+  correo: string = "";
+  password: string = "";
 
   constructor() { }
 
@@ -32,5 +34,17 @@ export class UserService {
 
   getNombre(){
     return this.nombre;
+  }
+ getCorreo(){
+    return this.correo;
+  }
+  getPassword(){
+    return this.password;
+  }
+  setcorreo(correo: string){
+    this.correo = correo;
+  }
+  setPassword(password: string){
+    this.password = password;
   }
 }

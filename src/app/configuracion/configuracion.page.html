@@ -1,13 +1,81 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+
+   
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img [src]="avatar">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ nombre }}</h2>
+        <p>Puntos: 120</p>
+      </ion-label>
+    </ion-item>
+
+   
+    <ion-list>
+
+      <ion-item routerLink="/home">
+        <ion-label> Inicio</ion-label>
+      </ion-item>
+
+      <ion-item routerLink="/materias">
+        <ion-label> Materias</ion-label>
+      </ion-item>
+
+      <ion-item routerLink="/actividades">
+        <ion-label> Actividades</ion-label>
+      </ion-item>
+
+    </ion-list>
+
+   
+    <ion-list>
+      <ion-item routerLink="/configuracion">
+        <ion-label> Configuración</ion-label>
+      </ion-item>
+    </ion-list>
+
+   
+    <ion-button expand="block" routerLink="/login">
+      Cerrar sesión
+    </ion-button>
+
+  </ion-content>
+</ion-menu>
+
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>configuracion</ion-title>
+    <ion-title>Configuracion</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">configuracion</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="ion-padding">
+    <h2>Configuración de la cuenta</h2>
+    <p>Aquí puedes modificar tus datos personales, cambiar tu contraseña y ajustar tus preferencias.</p>
+
+    <ion-item>
+      <ion-label position="floating">Nombre completo</ion-label>
+      <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input type="email" [(ngModel)]="correo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-button (click)="guardarCambios()">Guardar cambios</ion-button>
+  </div>
 </ion-content>

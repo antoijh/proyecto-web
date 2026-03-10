@@ -17,7 +17,8 @@ export const routes: Routes = [
   {
     path: 'login',
     loadComponent: () => import('./login/login.page').then(m => m.LoginPage)
-  },  {
+  },
+  {
     path: 'maestro-home',
     loadComponent: () => import('./maestro-home/maestro-home.page').then( m => m.MaestroHomePage)
   },
@@ -27,7 +28,9 @@ export const routes: Routes = [
   },
   {
     path: 'configuracion',
-    loadComponent: () => import('./configuracion/configuracion.page').then( m => m.ConfiguracionPage)
-  }
+    loadComponent: () => import('./configuracion/configuracion.page').then( m => m.ConfiguracionPage)},
+ {
+    path: 'materias',
+    loadComponent: () => import('./materias/materias.page').then( m => m.MateriasPage)  }
 
 ];

@@ -17,7 +17,8 @@ export const routes: Routes = [
   {
     path: 'login',
     loadComponent: () => import('./login/login.page').then(m => m.LoginPage)
-  },  {
+  },
+  {
     path: 'maestro-home',
     loadComponent: () => import('./maestro-home/maestro-home.page').then( m => m.MaestroHomePage)
   },
@@ -28,6 +29,10 @@ export const routes: Routes = [
   {
     path: 'materias',
     loadComponent: () => import('./materias/materias.page').then( m => m.MateriasPage)
+  },
+  {
+    path: 'actividades',
+    loadComponent: () => import('./actividades/actividades.page').then( m => m.ActividadesPage)
   }
 
 ];
